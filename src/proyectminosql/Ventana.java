@@ -52,7 +52,13 @@ public class Ventana extends javax.swing.JFrame {
         buttonTabla = new javax.swing.JButton();
         buttonBorrarTabla = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        buttonCargarTodos = new javax.swing.JButton();
+        buttonBorrarFila = new javax.swing.JButton();
+        buttonBuscarColumna = new javax.swing.JButton();
+        comboColumas = new javax.swing.JComboBox<>();
+        textBuscarColumna = new javax.swing.JTextField();
+        textBuscarComando = new javax.swing.JTextField();
+        buttonBuscarComando = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -100,6 +106,12 @@ public class Ventana extends javax.swing.JFrame {
             }
         });
 
+        textTabla.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textTablaActionPerformed(evt);
+            }
+        });
+
         buttonTabla.setText("Nueva Tabla");
         buttonTabla.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -116,7 +128,51 @@ public class Ventana extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/minosql/icon/icon.png"))); // NOI18N
 
-        jButton1.setText("jButton1");
+        buttonCargarTodos.setText("Cargar Todos");
+        buttonCargarTodos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonCargarTodosActionPerformed(evt);
+            }
+        });
+
+        buttonBorrarFila.setText("Borrar");
+        buttonBorrarFila.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonBorrarFilaActionPerformed(evt);
+            }
+        });
+
+        buttonBuscarColumna.setText("Buscar");
+        buttonBuscarColumna.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonBuscarColumnaActionPerformed(evt);
+            }
+        });
+
+        comboColumas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboColumasActionPerformed(evt);
+            }
+        });
+
+        textBuscarColumna.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textBuscarColumnaActionPerformed(evt);
+            }
+        });
+
+        textBuscarComando.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textBuscarComandoActionPerformed(evt);
+            }
+        });
+
+        buttonBuscarComando.setText("Buscar");
+        buttonBuscarComando.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonBuscarComandoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -126,8 +182,16 @@ public class Ventana extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 877, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addComponent(comboColumas, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(textBuscarColumna)
+                        .addGap(18, 18, 18)
+                        .addComponent(buttonBuscarColumna, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34)
+                        .addComponent(buttonBorrarFila, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(45, 45, 45)
+                        .addComponent(buttonCargarTodos, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -148,11 +212,16 @@ public class Ventana extends javax.swing.JFrame {
                         .addGap(29, 29, 29)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(buttonBorrarEsquema, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(buttonBorrarTabla, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(133, 133, 133))
+                            .addComponent(buttonBorrarTabla, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 877, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(textBuscarComando, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(buttonBuscarComando, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(363, 363, 363)))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -175,18 +244,27 @@ public class Ventana extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonCargarTodos)
+                    .addComponent(buttonBorrarFila)
+                    .addComponent(buttonBuscarColumna)
+                    .addComponent(comboColumas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textBuscarColumna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textBuscarComando, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonBuscarComando))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
    
     private void comboEsquemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboEsquemaActionPerformed
-     if(comboEsquema.getSelectedItem().equals("")){
-       comboTabla.setEnabled(false);
-       textTabla.setEnabled(false);
-     }
+    // if(comboEsquema.getSelectedItem().equals("")){
+      // comboTabla.setEnabled(false);
+      // textTabla.setEnabled(false);
+     //}
         
     }//GEN-LAST:event_comboEsquemaActionPerformed
 
@@ -249,6 +327,38 @@ public class Ventana extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_buttonBorrarTablaActionPerformed
 
+    private void buttonBuscarColumnaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBuscarColumnaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonBuscarColumnaActionPerformed
+
+    private void textTablaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textTablaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textTablaActionPerformed
+
+    private void comboColumasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboColumasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboColumasActionPerformed
+
+    private void textBuscarColumnaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textBuscarColumnaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textBuscarColumnaActionPerformed
+
+    private void buttonBorrarFilaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBorrarFilaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonBorrarFilaActionPerformed
+
+    private void buttonCargarTodosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCargarTodosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonCargarTodosActionPerformed
+
+    private void textBuscarComandoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textBuscarComandoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textBuscarComandoActionPerformed
+
+    private void buttonBuscarComandoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBuscarComandoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonBuscarComandoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -286,15 +396,21 @@ public class Ventana extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonBorrarEsquema;
+    private javax.swing.JButton buttonBorrarFila;
     private javax.swing.JButton buttonBorrarTabla;
+    private javax.swing.JButton buttonBuscarColumna;
+    private javax.swing.JButton buttonBuscarComando;
+    private javax.swing.JButton buttonCargarTodos;
     private javax.swing.JButton buttonEsquema;
     private javax.swing.JButton buttonTabla;
+    private javax.swing.JComboBox<String> comboColumas;
     private javax.swing.JComboBox<String> comboEsquema;
     private javax.swing.JComboBox<String> comboTabla;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tabla;
+    private javax.swing.JTextField textBuscarColumna;
+    private javax.swing.JTextField textBuscarComando;
     private javax.swing.JTextField textEsquema;
     private javax.swing.JTextField textTabla;
     // End of variables declaration//GEN-END:variables

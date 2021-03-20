@@ -48,7 +48,7 @@ public class AgregarColumnas extends javax.swing.JDialog {
     private void initComponents() {
 
         textColumna = new javax.swing.JTextField();
-        buttonColumna = new javax.swing.JButton();
+        buttonAgregarColumna = new javax.swing.JButton();
         listo = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         panelColumna = new javax.swing.JPanel();
@@ -61,10 +61,10 @@ public class AgregarColumnas extends javax.swing.JDialog {
             }
         });
 
-        buttonColumna.setText("Nueva Columna");
-        buttonColumna.addActionListener(new java.awt.event.ActionListener() {
+        buttonAgregarColumna.setText("Nueva Columna");
+        buttonAgregarColumna.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonColumnaActionPerformed(evt);
+                buttonAgregarColumnaActionPerformed(evt);
             }
         });
 
@@ -90,7 +90,7 @@ public class AgregarColumnas extends javax.swing.JDialog {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(textColumna)
                                 .addGap(18, 18, 18)
-                                .addComponent(buttonColumna))
+                                .addComponent(buttonAgregarColumna))
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 489, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(230, 230, 230)
@@ -103,7 +103,7 @@ public class AgregarColumnas extends javax.swing.JDialog {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textColumna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonColumna))
+                    .addComponent(buttonAgregarColumna))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -114,7 +114,7 @@ public class AgregarColumnas extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void buttonColumnaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonColumnaActionPerformed
+    private void buttonAgregarColumnaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAgregarColumnaActionPerformed
 
        String columna=textColumna.getText();
        JLabel nom=new JLabel(columna);
@@ -135,7 +135,7 @@ public class AgregarColumnas extends javax.swing.JDialog {
        });
        
        panelColumna.updateUI();
-    }//GEN-LAST:event_buttonColumnaActionPerformed
+    }//GEN-LAST:event_buttonAgregarColumnaActionPerformed
 
     private void textColumnaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textColumnaActionPerformed
         // TODO add your handling code here:
@@ -191,7 +191,7 @@ public class AgregarColumnas extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton buttonColumna;
+    private javax.swing.JButton buttonAgregarColumna;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton listo;
     private javax.swing.JPanel panelColumna;

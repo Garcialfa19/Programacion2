@@ -31,7 +31,7 @@
                           <Group type="102" attributes="0">
                               <Component id="textColumna" max="32767" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="buttonColumna" min="-2" max="-2" attributes="0"/>
+                              <Component id="buttonAgregarColumna" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jScrollPane2" alignment="0" min="-2" pref="489" max="-2" attributes="0"/>
                       </Group>
@@ -51,7 +51,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="textColumna" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="buttonColumna" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="buttonAgregarColumna" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jScrollPane2" pref="276" max="32767" attributes="0"/>
@@ -68,12 +68,12 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textColumnaActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="buttonColumna">
+    <Component class="javax.swing.JButton" name="buttonAgregarColumna">
       <Properties>
         <Property name="text" type="java.lang.String" value="Nueva Columna"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonColumnaActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonAgregarColumnaActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="listo">
